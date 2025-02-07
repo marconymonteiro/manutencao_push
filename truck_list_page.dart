@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'inspection_page.dart';
 import 'driver_registration_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'notifications_page.dart';
 
 class TruckListPage extends StatefulWidget {
   @override
@@ -305,6 +306,14 @@ class _TruckListPageState extends State<TruckListPage> {
               _navigateToManageTrucks();
             },
           ),
+          ListTile(
+          leading: const Icon(Icons.notifications),
+          title: const Text('Notificações'),
+          onTap: () {
+            Navigator.pop(context); // Fecha o Drawer
+            Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
+          }
+          )
         ],
       ),
     );
